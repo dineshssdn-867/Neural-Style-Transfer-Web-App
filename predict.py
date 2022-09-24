@@ -6,7 +6,6 @@ import cv2
 import streamlit as st
 from PIL import Image
 
-@st.cache
 def transfer(content_image, style_image):
     content_image = load_image(content_image)
     style_image = load_image(style_image)

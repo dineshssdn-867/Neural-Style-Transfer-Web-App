@@ -2,11 +2,10 @@ import tensorflow as tf
 from PIL import Image
 import numpy as np
 import streamlit as st
-import cv2
 
 @st.cache
-def load_image(img_path):
-    img = Image.open(img_path)
+def load_image(upload_img):
+    img = Image.open(upload_img).convert('RGB')
     img = np.asarray(img)
     img = tf.image.convert_image_dtype(img, tf.float32)
     img = img[tf.newaxis, :]
